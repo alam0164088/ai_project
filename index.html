@@ -6,86 +6,90 @@
     <title>Your AI-Powered Sales Coach</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo-text">
-                <h1>SalesRank.AI</h1>
-            </div>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">AI Coach</a></li>
-                </ul>
-            </div>
-            <div class="nav-button">
-                <a href="#" class="btn-get-started">Get Started</a>
-            </div>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Section -->
-    <section class="main-section">
-        <div class="main-content">
-            <!-- Left Section: Text Content -->
-            <div class="left-content">
-                <h1>Your AI-Powered Sales Coach</h1>
-                <div class="image-container">
-                    <div class="imag">
-                        <img src="css/image/image-1.png" alt="AI Image">
-                    </div>
-                    <div>
-                        <p>Get real-time coaching, script suggestions, and deal-closing strategies powered by advanced AI technology.</p>
-                    </div>
+    <!-- Header Section -->
+    <div class="background-container" style="background-image: url('css/image/foot.png'); background-size: cover; background-position: center;">
+        <header>
+            <nav class="navbar">
+                <div class="logo-text">
+                    <h1>SalesRank.AI</h1>
                 </div>
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="icon-box">
-                            <img src="css/image/backup_table.png" alt="AI Image">
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">AI Coach</a></li>
+                    </ul>
+                </div>
+                <div class="nav-button">
+                    <a href="#" class="btn-get-started">Get Started</a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+    
+        <!-- Main Section -->
+        <section class="main-section">
+            <div class="main-content">
+                <!-- Left Section: Text Content -->
+                <div class="left-content">
+                    <h1>Your AI-Powered Sales Coach</h1>
+                    <div class="image-container">
+                        <div class="imag">
+                            <img src="css/image/image-1.png" alt="AI Image">
                         </div>
                         <div>
-                            <h2>2000+</h2>
-                            <p>Your protection</p>
+                            <p>Get real-time coaching, script suggestions, and deal-closing strategies powered by advanced AI technology.</p>
                         </div>
                     </div>
-                    <div class="stat-item">
-                        <div class="icon-box">
-                            <img src="css/image/atr.png" alt="AI Image">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="icon-box">
+                                <img src="css/image/backup_table.png" alt="AI Image">
+                            </div>
+                            <div>
+                                <h2>2000+</h2>
+                                <p>Your protection</p>
+                            </div>
                         </div>
-                        <div>
-                            <h2>7001+</h2>
-                            <p>Provide tailored</p>
+                        <div class="stat-item">
+                            <div class="icon-box">
+                                <img src="css/image/atr.png" alt="AI Image">
+                            </div>
+                            <div>
+                                <h2>7001+</h2>
+                                <p>Provide tailored</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Section: Growth Stats and Image -->
+                <div class="right-content">
+                    <div class="image-wrapper">
+                        <img src="css/image/image.png" alt="AI Image">
+                    </div>
+                    <div class="growth-container">
+                        <div class="growth-item">
+                            <div class="stats-row">
+                                <h2>721+</h2>
+                                <h2>1000+</h2>
+                            </div>
+                            <h4>Growth is our priority.</h4>
+                            <h6>As a full-service business agency, we specialize in helping companies of all sizes optimize their operations</h6>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Right Section: Growth Stats and Image -->
-            <div class="right-content">
-                <div class="image-wrapper">
-                    <img src="css/image/image.png" alt="AI Image">
-                </div>
-                <div class="growth-container">
-                    <div class="growth-item">
-                        <div class="stats-row">
-                            <h2>721+</h2>
-                            <h2>1000+</h2>
-                        </div>
-                        <h1>Growth is our priority.</h1>
-                        <h6>As a full-service business agency, we specialize in helping companies of all sizes optimize their operations</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Live AI Coach Section -->
     <section class="live-coach">
@@ -96,26 +100,24 @@
         <div class="content">
             <section class="chat-section">
                 <div class="chat-box">
-                    <!-- Chat Messages will appear here -->
-                    <div class="chat-message-container" id="chatMessageContainer">
-                        <div class="chat-message">
-                            <p>Hello! I'm your AI sales coach. How can I help you improve your sales performance today?</p>
-                        </div>
+                    <div class="chat-message-container" id="chatMessageContainer"></div>
+                    <div class="auto-messages">
+                        <div class="auto-message" data-message="Hello! How can I help you today?">Hello! How can I help you today?</div>
+                        <div class="auto-message" data-message="goals?">goals?</div>
+                        <div class="auto-message" data-message="Need help">Need help</div>
                     </div>
-                    <!-- Message Input and Send Button -->
                     <div class="chat-input-container">
                         <input type="text" id="messageInput" placeholder="Type your message..." />
                         <button id="sendMessageButton">Send</button>
                     </div>
                 </div>
             </section>
-            
             <div class="vertical-buttons">
-                <button class="action-btn refresh"><i class="fas fa-sync"></i></button>
-                <button class="action-btn like"><i class="fas fa-thumbs-up"></i></button>
-                <button class="action-btn dislike"><i class="fas fa-thumbs-down"></i></button>
-                <button class="action-btn upload"><i class="fas fa-briefcase"></i></button>
-                <button class="action-btn sound"><i class="fas fa-volume-up"></i></button>
+                <button class="action-btn"><i class="fas fa-sync"></i></button>
+                <button class="action-btn"><i class="fas fa-thumbs-up"></i></button>
+                <button class="action-btn"><i class="fas fa-thumbs-down"></i></button>
+                <button class="action-btn"><i class="fas fa-briefcase"></i></button>
+                <button class="action-btn"><i class="fas fa-volume-up"></i></button>
             </div>
             <section class="analysis-section">
                 <div class="real-time-analysis">
@@ -132,12 +134,11 @@
                         <p>85% improvement in objection handling</p>
                     </div>
                 </div>
-            
                 <div class="quick-actions">
                     <h3>Quick Actions</h3>
                     <div class="action-buttons">
-                        <button class="action-btn">Generate Script</button>
-                        <button class="action-btn">Practice Pitch</button>
+                        <div class="action-box"><i class="fas fa-pencil-alt"></i> Generate Script</div>
+                        <div class="action-box"><i class="fas fa-microphone-alt"></i> Practice Pitch</div>
                     </div>
                 </div>
             </section>
@@ -156,8 +157,8 @@
                 <div class="course-image">
                     <img src="css/image/image-2.png" alt="Web Design Fundamentals">
                     <div class="course-details">
-                        <span>4 weeks</span>
-                        <span>Beginner</span>
+                        <span class="left-span">4 weeks</span>
+                        <span class="right-span">Beginner</span>
                         <h2>By John Smith</h2>
                     </div>
                     <h3>Web Design Fundamentals</h3>
@@ -169,8 +170,11 @@
                 <div class="course-image">
                     <img src="css/image/image-3.png" alt="Web Design Fundamentals">
                     <div class="course-details">
-                        <span>4 weeks</span>
-                        <span>Beginner</span>
+                      
+                        <span class="left-span">4 weeks</span>
+                        <span class="right-span">Beginner</span>
+                        
+                        
                         <h2>By John Smith</h2>
                     </div>
                     <h3>Web Design Fundamentals</h3>
@@ -192,7 +196,6 @@
             <div class="faq-answer">
                 <p>Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view</p>
             </div>
-            <!-- Plus Sign for First FAQ Item -->
             <div class="faq-sign">+</div>
         </div>
         <div class="faq-item">
@@ -200,7 +203,6 @@
                 <span class="question-number">02</span>
                 <span class="question-text">I like your works, how do we start a project?</span>
             </div>
-            <!-- Minus Sign for Other FAQ Items -->
             <div class="faq-sign">-</div>
         </div>
         <div class="faq-item">
@@ -208,7 +210,6 @@
                 <span class="question-number">03</span>
                 <span class="question-text">What info is required to get a quotation?</span>
             </div>
-            <!-- Minus Sign for Other FAQ Items -->
             <div class="faq-sign">-</div>
         </div>
     </section>
@@ -219,7 +220,7 @@
             <p class="quote">"They thoroughly analyze our industry and target audience, allowing them to develop customized campaigns that effectively reach and engage our customers. Their creative ideas and cutting-edge techniques have helped us stay ahead of the competition."</p>
             <div class="testimonial-footer">
                 <div class="author-info">
-                    <img src="css/image/avatar-placeholder.png" alt="Avatar" class="avatar">
+                    <img src="css/image/ceo.png" alt="Avatar" class="avatar">
                     <div class="author-details">
                         <p class="author-name">Michael Kaiser</p>
                         <p class="author-title">CEO of Basecamp Corp</p>
@@ -234,105 +235,60 @@
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="cta-section">
+    <!-- CTA Section -->
+    <section class="cta-footer-section" style="background-image: url('css/image/foot.png'); background-size: cover; background-position: center;">
         <div class="cta-content">
             <h2>Ready to Hire Smarter?</h2>
             <p>Unlock Exclusive Insights, Strategies, and Expertise.</p>
             <button class="cta-btn">Join Now</button>
         </div>
+        <footer class="footer-section">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <div class="logo">
+                            <span>Logo</span>
+                        </div>
+                        <p>SalesRank AI offers a comprehensive suite of AI-powered solutions to help your business grow effectively. From advanced sales analytics to personalized coaching, we provide the insights and tools to optimize your sales strategies and drive growth.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#">Service</a></li>
+                            <li><a href="#">Agency</a></li>
+                            <li><a href="#">Case Study</a></li>
+                            <li><a href="#">Resources</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Licence</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">License</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column contact-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> +1 (606) 555-0120</li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:hello@agency.com">hello@agency.com</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> 1372 Westheimer Rd, Santa Ana, BS 85456</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="footer-section">
-        <div class="footer-content">
-            <div class="footer-column">
-                <div class="logo">
-                    <span>SalesRank AI</span>
-                </div>
-                <p>SalesRank AI offers a comprehensive suite of AI-powered solutions to help your business grow effectively. From advanced sales analytics to personalized coaching, we provide the insights and tools to optimize your sales strategies and drive growth.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Agency</a></li>
-                    <li><a href="#">Case Study</a></li>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Licence</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Disclaimer</a></li>
-                    <li><a href="#">License</a></li>
-                </ul>
-            </div>
-            <div class="footer-column contact-column">
-                <h4>Contact</h4>
-                <ul>
-                    <li><i class="fas fa-phone-alt"></i> +1 (606) 555-0120</li>
-                    <li><i class="fas fa-envelope"></i> <a href="mailto:hello@agency.com">hello@agency.com</a></li>
-                    <li><i class="fas fa-map-marker-alt"></i> 1372 Westheimer Rd, Santa Ana, BS 85456</li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Hamburger Menu Toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            this.classList.toggle('active');
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Chat Functionality
-        const messageInput = document.getElementById('messageInput');
-        const sendMessageButton = document.getElementById('sendMessageButton');
-        const chatMessageContainer = document.getElementById('chatMessageContainer');
-
-        sendMessageButton.addEventListener('click', function() {
-            const messageText = messageInput.value.trim();
-            if (messageText !== "") {
-                const messageElement = document.createElement('div');
-                messageElement.classList.add('chat-message');
-                messageElement.innerHTML = `<p>${messageText}</p>`;
-                chatMessageContainer.appendChild(messageElement);
-                messageInput.value = "";
-                chatMessageContainer.scrollTop = chatMessageContainer.scrollHeight;
-            }
-        });
-
-        messageInput.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                sendMessageButton.click();
-            }
-        });
-
-        // Scroll Event Listener for Navbar (Hide/Show on Scroll Direction)
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            let currentScrollTop = window.scrollY || document.documentElement.scrollTop;
-
-            if (currentScrollTop > lastScrollTop) {
-                // Scrolling down
-                navbar.classList.add('scrolled');
-            } else {
-                // Scrolling up
-                navbar.classList.remove('scrolled');
-            }
-            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
-        });
-    </script>
+    <script src="css/scripts.js"></script>
 </body>
 </html>
