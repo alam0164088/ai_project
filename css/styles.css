@@ -10,93 +10,57 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-    max-width: 900px; /* ফাঁকা জায়গা কমানোর জন্য max-width বাড়ানো হয়েছে */
-    height: 108px;
-    padding: 30px 20px;
+    max-width: 900px;
+    height: 80px;
+    padding: 15px 20px;
     position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    
     color: #1a237e;
-    
     z-index: 1000;
     margin: 0 20px;
+   
+    transition: transform 0.3s ease; /* Smooth transition for hiding/showing */
 }
 
-
-.navbar .logo a {
-    color: #1a237e;
-    font-size: 28px;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* Logo Container */
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to right, #e0e7ff, #1e3a8a); /* Gradient background */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-
-/* Logo Icon */
-.logo-icon {
-    margin-right: 15px;
-}
-
-.logo-icon img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+/* Scrolled State for Navbar (Hide on Scroll) */
+.navbar.scrolled {
+    transform: translateY(-100%); /* Hide the navbar by moving it up */
 }
 
 /* Logo Text */
 .logo-text h1 {
-    font-size: 32px;
+    font-size: 24px;
     color: #1e3a8a;
     font-weight: bold;
 }
 
-.logo-text p {
-    font-size: 14px;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 5px;
-}
-
-/* Optional hover effect */
-.logo:hover {
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-
+/* Nav Links - Centered */
 .nav-links {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .nav-links ul {
     display: flex;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links ul li {
-    margin-left: 30px;
+    margin: 0 5px;
 }
 
 .nav-links ul li a {
     text-decoration: none;
     color: #1a237e;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: normal;
     transition: color 0.3s;
 }
@@ -105,13 +69,20 @@
     color: #ff9900;
 }
 
+/* Nav Button Styles */
+.nav-button {
+    display: flex;
+    align-items: center;
+}
+
 .nav-button .btn-get-started {
     background-color: #ffca28;
     color: #1a237e;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
     transition: background-color 0.3s;
 }
 
@@ -152,26 +123,40 @@
 /* Responsive Styles */
 @media (max-width: 1024px) {
     .navbar {
-        padding: 20px 10px;
+        padding: 10px 15px;
         margin: 0 15px;
         max-width: 700px;
+        height: 70px;
+    }
+
+    .logo-text h1 {
+        font-size: 20px;
     }
 
     .nav-links ul li {
-        margin: 0 15px;
+        margin: 0 4px;
     }
 
     .nav-links ul li a {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .nav-button .btn-get-started {
+        padding: 6px 12px;
+        font-size: 12px;
     }
 }
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 15px 10px;
+        padding: 10px 10px;
         margin: 0 10px;
         max-width: 100%;
-        height: 70px;
+        height: 60px;
+    }
+
+    .logo-text h1 {
+        font-size: 18px;
     }
 
     /* Show hamburger menu in mobile view */
@@ -182,7 +167,7 @@
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%; /* Hidden by default */
+        right: -100%;
         height: 100vh;
         width: 250px;
         background-color: rgba(255, 255, 255, 0.95);
@@ -209,16 +194,23 @@
     }
 
     .nav-links ul li a {
-        font-size: 18px;
+        font-size: 16px;
     }
 
+    /* Move the nav-button inside nav-links in mobile view */
     .nav-button {
+        display: none; /* Hide the nav-button in mobile view */
+    }
+
+    .nav-links.active .nav-button {
+        display: flex; /* Show nav-button inside the hamburger menu */
         margin-top: 20px;
         padding-left: 20px;
     }
 
-    .nav-button .btn-get-started {
-        font-size: 16px;
+    .nav-links.active .nav-button .btn-get-started {
+        font-size: 14px;
+        padding: 8px 16px;
     }
 }
 
@@ -271,12 +263,9 @@
     width: 100%;
     height: auto;
     max-width: 600px;
-    border-radius: 10px; /* Optional: Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Creates the shadow effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-
-
 
 .icon-box {
     background: #fff;
@@ -337,17 +326,16 @@
 
 .image-wrapper {
     width: 100%;
-    max-width: 300px; /* Decreased max-width to make the image smaller */
+    max-width: 300px;
     margin-bottom: -40px;
     z-index: 1;
 }
 
 .image-wrapper img {
-    width: 100%;   /* Makes the image take up 100% of the wrapper's width */
-    height: auto;  /* Maintains aspect ratio */
+    width: 100%;
+    height: auto;
     border-radius: 10px;
 }
-
 
 .growth-container {
     width: 100%;
@@ -362,18 +350,12 @@
     padding: 10px;
     text-align: left;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 700px; /* Increased max-width to make the box larger */
-    margin-left: 0;  /* Aligns the item to the left */
+    max-width: 700px;
+    margin-left: -100px;
     margin-right: 70px;
     margin-top: -20px;
-    width: 100%; /* Ensure the width stretches to 100% of the parent */
+    width: 100%;
 }
-
-/* Add margin-left to shift it further to the left */
-.growth-item {
-    margin-left: -100px; /* Decrease or increase margin-left to move further left */
-}
-
 
 .growth-item .stats-row {
     display: flex;
@@ -464,6 +446,7 @@
 }
 
 /* Live AI Coach Section */
+/* Live AI Coach Section */
 .live-coach {
     padding: 40px 20px;
     max-width: 900px;
@@ -496,16 +479,9 @@
 .content {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
     gap: 20px;
-}
-
-/* General styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 /* Chatbox Styling */
@@ -514,9 +490,8 @@
     justify-content: center;
     align-items: flex-end;
     height: 400px;
-    width: 80%;
+    width: 40%; /* Adjusted width for desktop */
     max-width: 400px;
-    margin: auto;
     background-color: #f7f7f7;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -553,20 +528,19 @@
 .chat-input-container {
     display: flex;
     width: 100%;
+    gap: 10px;
 }
 
 #messageInput {
-    width: 80%;
+    flex: 1;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin-right: 10px;
     font-size: 14px;
 }
 
 #sendMessageButton {
-    width: 15%;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #003366;
     color: white;
     border: none;
@@ -579,30 +553,24 @@
     background-color: #ff9900;
 }
 
-.quick-actions {
+/* Vertical Buttons Container */
+.vertical-buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 11px;
+    align-items: center;
+    gap: 12px;
+    background-color: hsl(0, 16%, 92%);
+    padding: 10px;
+    border-radius: 81px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    width: 60px;
 }
 
-.quick-action-btn {
-    background-color: #1a237e;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.quick-action-btn:hover {
-    background-color: #ffca28;
-}
-
-.coach-analysis {
+/* Analysis Section (Real-time Analysis and Quick Actions) */
+.analysis-section {
     width: 40%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -674,6 +642,7 @@
 .action-buttons {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
 .action-btn {
@@ -688,98 +657,272 @@
 }
 
 .action-btn:hover {
-    background-color: #ff9900; /* Change background on hover */
+    background-color: #ff9900;
 }
 
-/* Vertical Buttons Container */
-.vertical-buttons {
-    
-    top: 10%;
-    right: 10px;
-    display: flex
-    ;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    background-color: hsl(0, 16%, 92%);
-    padding: 10px;
-    border-radius: 81px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); /* Reduced shadow effect */
-    z-index: 999; /* Ensures it's above other content */
-    height: 300px;
-   
-}
-
-/* Action Buttons inside the box */
+/* Vertical Button Styles */
 .action-btn {
     background-color: #fff;
     border: 2px solid #bbdefb;
     color: #1a237e;
-    padding: 10px; /* Reduced padding to make buttons smaller */
+    padding: 10px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 14px; /* Reduced font size for smaller icons */
+    font-size: 14px;
     transition: background-color 0.3s, transform 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow effect */
-   
-    margin-bottom: -10px;
-    margin-top: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Button Hover effect */
 .action-btn:hover {
     background-color: #ffca28;
-    transform: scale(1.05); /* Slightly smaller scale increase on hover */
+    transform: scale(1.05);
 }
 
-/* Icon Styles inside the button */
 .action-btn i {
-    font-size: 18px; /* Reduced icon size */
+    font-size: 18px;
     color: #1a237e;
 }
 
 .action-btn:hover i {
-    color: white; /* Changes icon color on hover */
+    color: white;
 }
 
-
-
+/* Responsive Styles for Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
     .live-coach {
         max-width: 700px;
+        padding: 30px 15px;
     }
 
-    .chat-box, .coach-analysis {
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .header h3 {
+        font-size: 18px;
+    }
+
+    .content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .chat-section {
         width: 45%;
+        max-width: 350px;
+        height: 350px;
+    }
+
+    .analysis-section {
+        width: 45%;
+        max-width: 350px;
     }
 
     .vertical-buttons {
-        width: 10%;
+        flex-direction: row;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        padding: 10px 20px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .action-btn {
+        padding: 8px;
+    }
+
+    .action-btn i {
+        font-size: 16px;
+    }
+
+    .real-time-analysis h3, .quick-actions h3 {
+        font-size: 20px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
     }
 }
 
+/* Responsive Styles for Mobile (Below 768px) */
 @media (max-width: 768px) {
     .live-coach {
         max-width: 100%;
-        padding: 20px 15px;
+        padding: 20px 10px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header h3 {
+        font-size: 16px;
     }
 
     .content {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
 
-    .chat-box, .coach-analysis, .vertical-buttons {
+    .chat-section {
         width: 100%;
-        margin-bottom: 20px;
+        max-width: 100%;
+        height: 300px;
+        padding: 15px;
+    }
+
+    .chat-message {
+        max-width: 90%;
+    }
+
+    #messageInput {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    #sendMessageButton {
+        padding: 8px 15px;
+        font-size: 12px;
     }
 
     .vertical-buttons {
         flex-direction: row;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        border-radius: 10px;
         justify-content: center;
+        gap: 10px;
+    }
+
+    .action-btn {
+        padding: 8px;
+    }
+
+    .action-btn i {
+        font-size: 14px;
+    }
+
+    .analysis-section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .real-time-analysis, .quick-actions {
+        padding: 15px;
+    }
+
+    .real-time-analysis h3, .quick-actions h3 {
+        font-size: 18px;
+    }
+
+    .confidence-level label {
+        font-size: 14px;
+    }
+
+    .confidence-level span {
+        font-size: 12px;
+    }
+
+    .additional-info {
+        font-size: 12px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-btn {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* For Very Small Screens (Below 480px) */
+@media (max-width: 480px) {
+    .live-coach {
+        padding: 15px 5px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .header h3 {
+        font-size: 14px;
+    }
+
+    .chat-section {
+        height: 250px;
+        padding: 10px;
+    }
+
+    .chat-message {
+        padding: 8px;
+        max-width: 95%;
+    }
+
+    #messageInput {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    #sendMessageButton {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    .vertical-buttons {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .action-btn {
+        padding: 6px;
+    }
+
+    .action-btn i {
+        font-size: 12px;
+    }
+
+    .real-time-analysis, .quick-actions {
+        padding: 10px;
+    }
+
+    .real-time-analysis h3, .quick-actions h3 {
+        font-size: 16px;
+    }
+
+    .confidence-level label {
+        font-size: 12px;
+    }
+
+    .confidence-level span {
+        font-size: 10px;
+    }
+
+    .additional-info {
+        font-size: 10px;
+    }
+
+    .action-btn {
+        padding: 6px;
+        font-size: 12px;
     }
 }
 
@@ -814,9 +957,9 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 0; /* Remove any right margin */
-    margin-left: auto; /* Push the button to the right */
-    display: block; /* Ensures the button behaves like a block element */
+    margin-right: 0;
+    margin-left: auto;
+    display: block;
     margin-top: -53px;
 }
 
@@ -852,21 +995,19 @@
 }
 
 .course-details span {
-    background-color: #e0e7ff; /* Light background color for the box */
-    color: #1c1d24; /* Text color */
-    padding: 8px 15px; /* Padding to create box around text */
-    border-radius: 12px; /* Rounded corners */
-    font-size: 10px; /* Smaller text size */
-    font-weight: bold; /* Bold text */
-    text-transform: uppercase; /* 
-    Uppercase text */
+    background-color: #e0e7ff;
+    color: #1c1d24;
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.course-details h2{
-     font-size: 10px;
-     margin-top: 3px;
+.course-details h2 {
+    font-size: 10px;
+    margin-top: 3px;
 }
-
 
 .course-image h3 {
     font-size: 20px;
@@ -916,7 +1057,6 @@
     }
 }
 
-
 /* FAQ Section */
 .faq-section {
     padding: 40px 20px;
@@ -945,30 +1085,30 @@
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    border-bottom: 1px solid #ddd; /* Add a bottom border for a clean look */
-    position: relative; /* Make the FAQ item relative to position the sign */
+    border-bottom: 1px solid #ddd;
+    position: relative;
 }
 
 /* Position the signs (plus or minus) to the right */
 .faq-item .faq-sign {
     position: absolute;
-    right: 10px; /* Adjust the position of the sign */
-    top: 20px; /* Align the sign vertically */
-    font-size: 30px; /* Size of the sign */
+    right: 10px;
+    top: 20px;
+    font-size: 30px;
     font-weight: bold;
-    color: #1a237e; /* Default color */
+    color: #1a237e;
 }
 
 /* Plus Sign for the First FAQ Item */
 .faq-item:first-of-type .faq-sign {
     content: "+";
-    color: rgb(22, 23, 22); /* Green color for the plus sign */
+    color: rgb(22, 23, 22);
 }
 
 /* Minus Sign for all other FAQ Items */
 .faq-item:not(:first-of-type) .faq-sign {
     content: "-";
-    color: rgb(21, 21, 21); /* Red color for the minus sign */
+    color: rgb(21, 21, 21);
 }
 
 .faq-question {
@@ -994,7 +1134,6 @@
     line-height: 1.5;
     margin-top: 10px;
 }
-
 
 @media (max-width: 1024px) {
     .faq-section {
@@ -1302,7 +1441,7 @@
     margin-bottom: 10px;
 }
 
-.footer-column$, .footer-column ul li a {
+.footer-column ul li a {
     color: #666;
     text-decoration: none;
     font-size: 14px;
