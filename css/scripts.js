@@ -53,3 +53,68 @@ window.addEventListener('scroll', function() {
     }
     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
 });
+
+
+const testimonials = [
+    {
+        quote: "They thoroughly analyze our industry and target audience, allowing them to develop customized campaigns that effectively reach and engage our customers. Their creative ideas and cutting-edge techniques have helped us stay ahead of the competition.",
+        name: "Michael Kaiser",
+        title: "CEO of Basecamp Corp",
+        avatar: "https://via.placeholder.com/50"
+    },
+    {
+        quote: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view how lorem13 thre farewrerrewerrrrrrrrrrrrrrrrrrrrrrrrrrrwerwrewrewrewr",
+
+        name: "Sarah Johnson",
+        title: "Marketing Director at TechTrend",
+        avatar: "https://via.placeholder.com/50"
+    },
+    {
+        quote: "They thoroughly analyze our industry and target audience, allowing them to develop customized campaigns that effectively reach and engage our customers. Their creative ideas and cutting-edge techniques have helped us stay ahead of the competition.",
+
+        name: "David Lee",
+        title: "CTO of Innovate Solutions",
+        avatar: "https://via.placeholder.com/50"
+    },
+    {
+        quote: "Bottleneck mice my capacity is full, nor incentivization we need to start advertising on social media, or helicopter view how lorem13 thre farewrerrewerrrrrrrrrrrrrrrrrrrrrrrrrrrwerwrewrewrewr",
+        name: "Emily Brown",
+        title: "Founder of GreenTech",
+        avatar: "https://via.placeholder.com/50"
+    },
+    {
+        quote: "They thoroughly analyze our industry and target audience, allowing them to develop customized campaigns that effectively reach and engage our customers. Their creative ideas and cutting-edge techniques have helped us stay ahead of the competition.",
+        name: "Robert Smith",
+        title: "COO of Peak Performance",
+        avatar: "https://via.placeholder.com/50"
+    }
+];
+
+let currentIndex = 0;
+
+function updateTestimonial() {
+    const quote = document.querySelector('.quote');
+    const authorName = document.querySelector('.author-name');
+    const authorTitle = document.querySelector('.author-title');
+    const avatar = document.querySelector('.avatar');
+    const carouselIndex = document.querySelector('.carousel-index');
+
+    quote.textContent = testimonials[currentIndex].quote;
+    authorName.textContent = testimonials[currentIndex].name;
+    authorTitle.textContent = testimonials[currentIndex].title;
+    avatar.src = testimonials[currentIndex].avatar;
+    carouselIndex.textContent = `${String(currentIndex + 1).padStart(2, '0')}/05`;
+}
+
+document.querySelector('.prev-btn').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    updateTestimonial();
+});
+
+document.querySelector('.next-btn').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    updateTestimonial();
+});
+
+// Initial load
+updateTestimonial();

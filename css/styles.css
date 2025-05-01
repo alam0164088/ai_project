@@ -290,15 +290,23 @@
 }
 
 /* Live AI Coach Section */
+/* Live AI Coach Section */
 .live-coach {
     padding: 40px 20px;
-    max-width: 900px;
+    width: 100%; /* Full width for background */
+    max-width: 100%; /* Ensure background covers entire width */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     background: linear-gradient(135deg, #1a237e 0%, #3f51b5 100%);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header, .content {
+    max-width: 900px; /* Keep inner content centered */
+    margin: 0 auto;
+    width: 100%; /* Ensure they don't extend beyond this width */
 }
 
 .header {
