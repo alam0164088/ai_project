@@ -1212,6 +1212,8 @@
     }
     .growth-container {
         max-width: 100%;
+        margin-top: 3px;
+        margin-left: -138px;
     }
     .growth-item {
         margin-left: 0;
